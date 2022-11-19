@@ -33,3 +33,4 @@ int [] getNumbers ()
 int [] inputNumbers;// = getNumbers();
 //Console.Write("The next numbers were entered: " + string.Join(", ", inputNumbers) + "\n");
 Console.WriteLine($"There were {positiveNumbersCount (getNumbers())} numbers large than zero entered.");
+
