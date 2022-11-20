@@ -1,34 +1,41 @@
-﻿//Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-//0, 7, 8, -2, -2 -> 2
-//1, -7, 567, 89, 223-> 3
+﻿//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+//b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-int positiveNumbersCount( int[] input )
+
+double [] GetLine (int numberInOrder, int angularCoefficientIndex, int displacementIndex)
 {
-    int result = 0;
+    double[] result = new double [2];
+/// Getting anglat coefficient
+    Console.Clear();
+    Console.WriteLine($"For Line #{numberInOrder} enter ");
+    Console.Write("angular coefficient  ");
+    result [0] = double.Parse(Console.ReadLine()!);
 
-    for (int i = 0; i < input.Length; i++)
-    {
-        if ( input[i] > 0 ) result++;
-    }
-    return result;
+/// Getting displaceent    
+    Console.WriteLine("");
+    Console.Write("displacement  ");
+    result [1] = double.Parse(Console.ReadLine()!);
+    return result;  
 }
 
-int [] getNumbers ()
-{
-    int [] result = {0};
-    int inputNumber = 0;
-    int i = 0;
 
-    do{
-        Console.Write($"Input a number (empty is the end of input): ");
-        string input = Console.ReadLine()!;
-        if (input != "") inputNumber = int.Parse(input); else break;
-        Array.Resize (ref result, i + 1);
-        result [i] = inputNumber;
-        i++;
-    } while (true);
-    return result;
+bool AreParallel (double angularCoefficientOne, double angularCoefficientTwo)
+{
+    return (angularCoefficientOne == angularCoefficientTwo);
 }
 
-int [] inputNumbers;
-Console.WriteLine($"There were {positiveNumbersCount (getNumbers())} numbers large than zero entered.");
+
+
+double [] lineOne, lineTwo;
+int angularCoefficientIndex = 0;
+int displacementIndex = 1;
+
+lineOne = GetLine(1);
+lineTwo = GetLine(2);
+if (!AreParallel (lineOne[angularCoefficientIndex], lineTwo[angularCoefficientIndex])) 
+{
+
+}
+
+//int [] inputNumbers;
+//Console.WriteLine($"There were {positiveNumbersCount (getNumbers())} numbers large than zero entered.");
