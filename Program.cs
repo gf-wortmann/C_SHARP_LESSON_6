@@ -46,9 +46,24 @@ class Line
     }
 }
 
-//class Geometry
-//{
+class Geometry
+{
+    private Line [] Store = new Line [2];
+    public Geometry ()
+    {
+        Store [0] = new Line();
+        Store [1] = new Line();
+    }
+    public void SetLine (Line newLine, int lineNumber)
+    {
+        Store[lineNumber - 1] = newLine.GetLine();
+    }
 
-//}
+    public bool AreParallel (int indexOne, int indexTwo)
+    {
+        return this.Store[indexOne].A() == this.Store[indexTwo].A();
+    }
+
+}
 
 
