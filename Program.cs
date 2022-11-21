@@ -11,12 +11,12 @@ double [] GetLine (int numberInOrder, int angularCoefficientIndex, int displacem
     Console.Clear();
     Console.WriteLine($"For Line #{numberInOrder} enter ");
     Console.Write("angular coefficient:  ");
-    result [0] = double.Parse(Console.ReadLine()!);
+    result [angularCoefficientIndex] = double.Parse(Console.ReadLine()!);
 
 /// Getting displaceent    
     Console.WriteLine("");
     Console.Write("and displacement:  ");
-    result [1] = double.Parse(Console.ReadLine()!);
+    result [displacementIndex] = double.Parse(Console.ReadLine()!);
 
 ///returning line data    
     return result;  
@@ -36,10 +36,10 @@ double [] GetIntersectionPoint ( double [] lineOne, double [] lineTwo)
     // Kramer formula
     
     double a, b, c, d;
-    a = lineOne [0];
-    b = lineTwo [0];
-    c = lineOne [1];
-    d = lineTwo [1];
+    a = lineOne [angularCoefficientIndex];
+    b = lineTwo [angularCoefficientIndex];
+    c = lineOne [displacementIndex];
+    d = lineTwo [displacementIndex];
 
 //    Console.WriteLine($"a = {a}. b = {b}, c = {c}, d = {d}");
 
